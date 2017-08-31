@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author informatica
  */
 @WebServlet(name = "Controllador", urlPatterns = {"/Controllador"})
-public class Controllador extends HttpServlet {
+public class CadastroPontuacao extends HttpServlet {
 
  
     @Override

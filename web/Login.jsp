@@ -22,26 +22,22 @@
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
-                <form name="form_registro" action="Controllador" method="post" class="col s12" style="
+                <form name="form_registro" action="Login" method="post" class="col s12" style="
                       width: 500px;
                       ">
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="nick_user" name="nick">
-                        <label class="mdl-textfield__label" for="sample1">nick</label>
+                        <input class="mdl-textfield__input" type="text" id="login_user" name="login">
+                        <label class="mdl-textfield__label" for="sample1">login</label>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="pontuacao_user" name="pontuaca">
-                        <label class="mdl-textfield__label" for="sample1">pontuacao</label>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="tempo_user" name="tempo">
-                        <label class="mdl-textfield__label" for="sample1">tempo</label>
+                        <input class="mdl-textfield__input" type="text" id="senha_user" name="senha">
+                        <label class="mdl-textfield__label" for="sample1">senha</label>
                     </div>
                     <button type="submit" class="mdl-button mdl-js-button mdl-button--raised" style="
                             margin-top: 50px;
                             margin-left: 200px;"
                             >
-                        Cadastrar
+                        Logar
                     </button>
                 </form>
         </div>
