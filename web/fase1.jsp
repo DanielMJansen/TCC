@@ -23,8 +23,9 @@
 		y: tileSize + 2,
 		width: 24,
 		height: 32,
-		speed: <% out.println("1"); %>
-		//atributos de animação
+                speed: <% out.println("2"); %>,
+                // %=fase.getSpeed()% depois vai ser algo assim
+		//atributos de animaÃ§Ã£o
 		srcX: 0,
 		srcY: tileSrcSize,
 		countAnim: 0
@@ -202,26 +203,26 @@
 	function update(){
 		if(mvLeft && !mvRight){
 			player.x -= player.speed;
-			//ajuste de orientação da animação para esquerda
+			//ajuste de orientaÃ§Ã£o da animaÃ§Ã£o para esquerda
 			player.srcY = tileSrcSize + player.height * 2;
 		} else 
 		if(mvRight && !mvLeft){
 			player.x += player.speed;
-			//ajuste de orientação da animação para direita
+			//ajuste de orientaÃ§Ã£o da animaÃ§Ã£o para direita
 			player.srcY = tileSrcSize + player.height * 3;
 		}
 		if(mvUp && !mvDown){
 			player.y -= player.speed;
-			//ajuste de orientação da animação para cima
+			//ajuste de orientaÃ§Ã£o da animaÃ§Ã£o para cima
 			player.srcY = tileSrcSize + player.height * 1;
 		} else 
 		if(mvDown && !mvUp){
 			player.y += player.speed;
-			//ajuste de orientação da animação para baixo
+			//ajuste de orientaÃ§Ã£o da animaÃ§Ã£o para baixo
 			player.srcY = tileSrcSize + player.height * 0;
 		}
 		
-		//processo de animação
+		//processo de animaÃ§Ã£o
 		if(mvLeft || mvRight || mvUp || mvDown){
 			player.countAnim++;
 			
@@ -294,7 +295,7 @@
         
         function checkLevel(){
             if(player.x == 1276 && player.y == 1184){
-                alert("Parabéns, você passou de nível!");
+                alert("ParabÃ©ns, vocÃª passou de nÃ­vel!");
                 window.location.replace("http://localhost:8383/Lab/labirinto2.html");
             }
         }
