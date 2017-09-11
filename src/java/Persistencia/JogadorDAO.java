@@ -29,7 +29,7 @@ public class JogadorDAO {
         return jogadores;
     }
         
-        public void CadastraJogador(String nick, String pontuacao, String tempo) throws SQLException {
+        public void CadastraRanking(String nick, String pontuacao, String tempo) throws SQLException {
         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Principal", "root", "alunoifc");
         String query = "insert into ranking(nick, pontuacao, tempo) values(?,?,?);";

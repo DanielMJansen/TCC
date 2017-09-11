@@ -23,7 +23,7 @@
 		y: tileSize + 2,
 		width: 24,
 		height: 32,
-                speed: <% out.println("2"); %>,
+                speed: <% out.println("10"); %>,
                 // %=fase.getSpeed()% depois vai ser algo assim
 		//atributos de animação
 		srcX: 0,
@@ -201,6 +201,8 @@
 	}
 	
 	function update(){
+            $("#posicao").text(player.x);
+            $("#posicaoy").text(player.y);
 		if(mvLeft && !mvRight){
 			player.x -= player.speed;
 			//ajuste de orientação da animação para esquerda
@@ -294,9 +296,9 @@
 	}
         
         function checkLevel(){
-            if(player.x == 1276 && player.y == 1184){
+            if(player.x >= 586 && player.y >= 3884){
                 alert("Parabéns, você passou de nível!");
-                window.location.replace("http://localhost:8383/Lab/labirinto2.html");
+                window.location.replace("/local/home/informatica/NetBeansProjects/TCC/web");
             }
         }
         

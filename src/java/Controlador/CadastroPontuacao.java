@@ -37,7 +37,7 @@ public class CadastroPontuacao extends HttpServlet {
         
         JogadorDAO DAO = new JogadorDAO();
         try {
-            DAO.CadastraJogador(jogador.getNick(), jogador.getPontuacao(), jogador.getTempo());
+            DAO.CadastraRanking(jogador.getNick(), jogador.getPontuacao(), jogador.getTempo());
         } catch (SQLException ex) {
             ex.printStackTrace();
             
