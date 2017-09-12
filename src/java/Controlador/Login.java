@@ -37,7 +37,7 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         Usuario user = new Usuario(request.getParameter("login"), request.getParameter("senha"));
         if(UsuarioDAO.existeUsuario(user)){
-            RequestDispatcher rd = request.getRequestDispatcher("Inicio.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("labirinto.html");
             rd.forward(request, response);
         }else{
                 RequestDispatcher rd = request.getRequestDispatcher("Inicio.jsp");

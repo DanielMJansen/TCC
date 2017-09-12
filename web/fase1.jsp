@@ -297,8 +297,8 @@
         
         function checkLevel(){
             if(player.x >= 586 && player.y >= 3884){
-                alert("Parabéns, você passou de nível!");
-                window.location.replace("/local/home/informatica/NetBeansProjects/TCC/web");
+                alert("Parabens, voce passou de nivel!");
+                window.location.replace("labirinto2.html");
             }
         }
         

@@ -9,6 +9,9 @@ import Modelo.Usuario;
 import Persistencia.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author informatica
  */
-@WebServlet(name = "Controlador", urlPatterns = {"/Controlador"})
+@WebServlet(name = "CadastroUsuario", urlPatterns = {"/CadastroUsuario"})
 public class CadastroUsuario extends HttpServlet {
 
     /**
@@ -40,6 +43,7 @@ public class CadastroUsuario extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("ErroCadastro.jsp");
             rd.forward(request, response);
         }else{
+            UsuarioDAO.insereUsuario(user);
             RequestDispatcher rd = request.getRequestDispatcher("Inicio.jsp");
             rd.forward(request, response);
         }

@@ -15,9 +15,11 @@
         <span class="mdl-layout-title">Lab Game</span>
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
+            <a class="mdl-navigation__link" href="Login.jsp">Login</a>
+            <a class="mdl-navigation__link" href="CadastroUsuario.jsp">Cadastrar</a>
+            <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
             <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
             <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>
-            <a class="mdl-navigation__link" href="Cadastra.jsp">Cadastra</a>
         </nav>
     </div>
     <main class="mdl-layout__content">

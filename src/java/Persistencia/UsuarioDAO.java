@@ -23,7 +23,7 @@ public class UsuarioDAO {
     
     public static void insereUsuario(Usuario user) {
 	try {
-	    String query = "insert into Usuario values(?,?)";
+	    String query = "insert into usuario values(?,?)";
 	    Connection conn = retornaConn();
 	    PreparedStatement ps = conn.prepareStatement(query);
 	    ps.setString(1, user.getLogin());

@@ -16,7 +16,8 @@
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
             <a class="mdl-navigation__link" href="Login.jsp">Login</a>
-            <a class="mdl-navigation__link" href="CadastroUsuario.jsp">Cadastrar</a>
+            <a class="mdl-navigation__link" href="CadastroUser.jsp">Cadastrar</a>
+            <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
             <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
             <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>
             
@@ -24,6 +25,6 @@
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
-                </form>
+                
         </div>
     </main>

@@ -17,6 +17,7 @@
             <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
             <a class="mdl-navigation__link" href="Login.jsp">Login</a>
             <a class="mdl-navigation__link" href="CadastroUsuario.jsp">Cadastrar</a>
+            <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
             <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
             <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>
         </nav>
@@ -27,11 +28,11 @@
                   width: 500px;
                   ">
                 <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text" id="login_user" name="     login">
+                    <input class="mdl-textfield__input" type="text" id="login_user" name="login">
                     <label class="mdl-textfield__label" for="sample1">login</label>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text" id="senha_user" name="      senha">
+                    <input class="mdl-textfield__input" type="text" id="senha_user" name="senha">
                     <label class="mdl-textfield__label" for="sample1">senha</label>
                 </div>
                 <button type="submit" class="mdl-button mdl-js-button mdl-button--raised" style="

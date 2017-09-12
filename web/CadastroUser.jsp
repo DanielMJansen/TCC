@@ -17,13 +17,14 @@
             <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
             <a class="mdl-navigation__link" href="Login.jsp">Login</a>
             <a class="mdl-navigation__link" href="CadastroUsuario.jsp">Cadastrar</a>
+            <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
             <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
             <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>
         </nav>
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
-                <form name="form_registro" action="Login" method="post" class="col s12" style="
+                <form name="form_registro" action="CadastroUsuario" method="post" class="col s12" style="
                       width: 500px;
                       ">
                     <div class="mdl-textfield mdl-js-textfield">
