@@ -25,23 +25,27 @@
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
-                <form name="form_registro" action="CadastroUsuario" method="post" class="col s12" style="
-                      width: 500px;
-                      ">
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="login_user" name="login">
-                        <label class="mdl-textfield__label" for="sample1">login</label>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="senha_user" name="senha">
-                        <label class="mdl-textfield__label" for="sample1">senha</label>
-                    </div>
-                    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised" style="
-                            margin-top: 50px;
-                            margin-left: 200px;"
-                            >
-                        Cadastrar
-                    </button>
-                </form>
+            <form name="form_registro" action="CadastroUsuario" method="post" class="col s12" style="
+                  width: 500px;
+                  ">
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="login_user" name="login">
+                    <label class="mdl-textfield__label" for="sample1">login</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="senha_user" name="senha">
+                    <label class="mdl-textfield__label" for="sample1">senha</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="senha_user" name="nick">
+                    <label class="mdl-textfield__label" for="sample1">nick</label>
+                </div>
+                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised" style="
+                        margin-top: 50px;
+                        margin-left: 200px;"
+                        >
+                    Cadastrar
+                </button>
+            </form>
         </div>
     </main>

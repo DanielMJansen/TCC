@@ -35,7 +35,7 @@ public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        Usuario user = new Usuario(request.getParameter("login"), request.getParameter("senha"));
+        Usuario user = new Usuario(request.getParameter("login"), request.getParameter("senha"), request.getParameter("nick"));
         if(UsuarioDAO.existeUsuario(user)){
             RequestDispatcher rd = request.getRequestDispatcher("labirinto.html");
             rd.forward(request, response);
