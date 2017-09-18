@@ -2,20 +2,12 @@ package Modelo;
 public class Usuario {
     private String login;
     private String senha;
-    private String nick;    
 
-    public String getNick() {
-        return nick;
-    }
 
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
-
-    public Usuario(String login, String senha, String nick) {
+    public Usuario(String login, String senha) {
         this.login = login;
         this.senha = senha;
-        this.nick = nick;
+
     }
 
     public String getLogin() {

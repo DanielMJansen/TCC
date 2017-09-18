@@ -23,12 +23,11 @@ public class UsuarioDAO {
     
     public static void insereUsuario(Usuario user) {
 	try {
-	    String query = "insert into usuario values(?,?,?)";
+	    String query = "insert into usuario values(?,?)";
 	    Connection conn = retornaConn();
 	    PreparedStatement ps = conn.prepareStatement(query);
 	    ps.setString(1, user.getLogin());
 	    ps.setString(2, user.getSenha());
-	    ps.setString(3, user.getNick());
 	    ps.execute();
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -38,12 +37,12 @@ public class UsuarioDAO {
     public static boolean existeUsuario(Usuario user) {
 	boolean ret = false;
 	try {
-	    String query = "select login, senha, nick from usuario";
+	    String query = "select login, senha from usuario";
 	    Connection conn = retornaConn();
 	    PreparedStatement ps = conn.prepareStatement(query);
 	    ResultSet rs = ps.executeQuery();
 	    while (rs.next()) {
-		if (rs.getString("login").equals(user.getLogin()) && rs.getString("senha").equals(user.getSenha()) &&  rs.getString("nick").equals(user.getNick())) {
+		if (rs.getString("login").equals(user.getLogin()) && rs.getString("senha").equals(user.getSenha())) {
 		    ret = true;
 		    break;
 		}

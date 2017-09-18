@@ -38,7 +38,7 @@ public class CadastroUsuario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        Usuario user = new Usuario(request.getParameter("login"), request.getParameter("senha"), request.getParameter("nick"));
+        Usuario user = new Usuario(request.getParameter("login"), request.getParameter("senha"));
         if(UsuarioDAO.existeLogin(user.getLogin()) || user.getLogin().equals("null")){
             RequestDispatcher rd = request.getRequestDispatcher("ErroCadastro.jsp");
             rd.forward(request, response);

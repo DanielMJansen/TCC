@@ -35,12 +35,12 @@ public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        Usuario user = new Usuario(request.getParameter("login"), request.getParameter("senha"), request.getParameter("nick"));
+        Usuario user = new Usuario(request.getParameter("login"), request.getParameter("senha"));
         if(UsuarioDAO.existeUsuario(user)){
             RequestDispatcher rd = request.getRequestDispatcher("labirinto.html");
             rd.forward(request, response);
         }else{
-                RequestDispatcher rd = request.getRequestDispatcher("Inicio.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
             rd.forward(request, response);
         }
     }
