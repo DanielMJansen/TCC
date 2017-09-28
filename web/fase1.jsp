@@ -32,6 +32,8 @@ alert('Total Time: ' + secs + ' seconds');
 var walls = [];
 
 
+
+
 var player = {
 x: tileSize + 2,
 y: tileSize + 2,
