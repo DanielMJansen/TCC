@@ -9,14 +9,30 @@ var mvLeft = mvUp = mvRight = mvDown = false;
 
 var tileSize = 64;
 var tileSrcSize = 96;
+var pontos = 3000;
 
 var img = new Image();
 img.src = "fase2.png";
 img.addEventListener("load",function(){
 requestAnimationFrame(loop,cnv);
 },false);
-
+window.onload = function() {
+var secs = 600;
+var id = setInterval(function(){ 
+secs--; console.log(secs);
+var minuto = Math.floor(secs/60);
+var segundo = secs-minuto*60;
+pontos= pontos-5;
+$("#pontuacao").text(+pontos);
+$("#tempo").text(minuto+":"+segundo);
+if(secs<= 0){
+clearInterval(id);
+alert('Total Time: ' + secs + ' seconds');
+}
+}, 1000);
+};
 var walls = [];
+
 
 var player = {
 x: tileSize + 2,

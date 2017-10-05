@@ -1,0 +1,14 @@
+ body {
+    background-color: green;
+ }
+ .flutua{
+     float: left;
+     border: solid red 2px;
+     background-color: powderblue;
+     
+ }
+ .letragrande{
+     font-size: 20px;
+ }
+ 
+ 
