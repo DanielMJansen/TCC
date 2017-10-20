@@ -32,15 +32,18 @@ public class Login extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    public static boolean logado;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         Usuario user = new Usuario(request.getParameter("login"), request.getParameter("senha"));
-        if(UsuarioDAO.existeUsuario(user)){
-            RequestDispatcher rd = request.getRequestDispatcher("labirinto.html");
+        if (UsuarioDAO.existeUsuario(user)) {
+            logado = true;
+            RequestDispatcher rd = request.getRequestDispatcher("InicioLogado.jsp");
             rd.forward(request, response);
-        }else{
-                RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
+        } else {
+            RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
             rd.forward(request, response);
         }
     }
