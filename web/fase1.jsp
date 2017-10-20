@@ -17,13 +17,15 @@ img.addEventListener("load",function(){
 requestAnimationFrame(loop,cnv);
 },false);
 window.onload = function() {
-var secs = 0;
+var secs = 600;
 var id = setInterval(function(){ 
-secs++; console.log(secs);
+secs--; console.log(secs);
+var minuto = Math.floor(secs/60);
+var segundo = secs-minuto*60;
 pontos= pontos-5;
-$("#pontuacao").text(pontos);
-$("#tempo").text(secs);
-if(secs> 120){
+$("#pontuacao").text(+pontos);
+$("#tempo").text(minuto+":"+segundo);
+if(secs<= 0){
 clearInterval(id);
 alert('Total Time: ' + secs + ' seconds');
 }
@@ -41,7 +43,7 @@ width: 24,
 height: 32,
 speed: <% out.println("10");%>,
 // %=fase.getSpeed()% depois vai ser algo assim
-//atributos de animação
+//atributos de animaÃ§Ã£o
 srcX: 0,
 srcY: tileSrcSize,
 countAnim: 0
@@ -221,26 +223,26 @@ $("#posicao").text(player.x);
 $("#posicaoy").text(player.y);
 if(mvLeft && !mvRight){
 player.x -= player.speed;
-//ajuste de orientação da animação para esquerda
+//ajuste de orientaÃ§Ã£o da animaÃ§Ã£o para esquerda
 player.srcY = tileSrcSize + player.height * 2;
 } else 
 if(mvRight && !mvLeft){
 player.x += player.speed;
-//ajuste de orientação da animação para direita
+//ajuste de orientaÃ§Ã£o da animaÃ§Ã£o para direita
 player.srcY = tileSrcSize + player.height * 3;
 }
 if(mvUp && !mvDown){
 player.y -= player.speed;
-//ajuste de orientação da animação para cima
+//ajuste de orientaÃ§Ã£o da animaÃ§Ã£o para cima
 player.srcY = tileSrcSize + player.height * 1;
 } else 
 if(mvDown && !mvUp){
 player.y += player.speed;
-//ajuste de orientação da animação para baixo
+//ajuste de orientaÃ§Ã£o da animaÃ§Ã£o para baixo
 player.srcY = tileSrcSize + player.height * 0;
 }
 
-//processo de animação
+//processo de animaÃ§Ã£o
 if(mvLeft || mvRight || mvUp || mvDown){
 player.countAnim++;
 
