@@ -1,3 +1,4 @@
+<%@page import="Controlador.Login"%>
 <%@page import="Persistencia.JogadorDAO"%>
 <%@page import="Modelo.Jogador"%>
 <!-- Always shows a header, even in smaller screens. -->
@@ -18,8 +19,13 @@
             <a class="mdl-navigation__link" href="Login.jsp">Login</a>
             <a class="mdl-navigation__link" href="CadastroUsuario.jsp">Cadastrar</a>
             <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
-            <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
-            <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>
+            <% if (Login.logado = true){
+                       <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
+            <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>    
+            }%>
+           <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
+            <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>         
+                    
         </nav>
     </div>
     <main class="mdl-layout__content">
@@ -34,14 +40,14 @@
                 </thead>
                 <tbody>
                     <%for(Jogador jogador : new JogadorDAO().CarregaJogador()){%>
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric"><%=jogador.getNick()%></td>
-                        <td><%=jogador.getPontuacao()%></td>
-                        <td><%=jogador.getTempo()%></td>
-                    </tr>
-                    <%}%>
-                </tbody>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric"><%=jogador.getNick()%></td>
+                <td><%=jogador.getPontuacao()%></td>
+                <td><%=jogador.getTempo()%></td>
+            </tr>
+            <%}%>
+            </tbody>
             </table>
-        </div>
-    </main>
+    </div>
+</main>
 </div>
