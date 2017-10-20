@@ -1,4 +1,14 @@
  body {
-    background-color: darkgreen;
-
+    background-color: forestgreen
  }
+ .flutua{
+     float: left;
+     border: solid red 2px;
+     background-color: powderblue;
+     
+ }
+ .letragrande{
+     font-size: 20px;
+ }
+ 
+ 
