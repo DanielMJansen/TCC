@@ -1,6 +1,9 @@
 package Persistencia;
 
 import Modelo.Usuario;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -23,13 +26,15 @@ public class UsuarioDAO {
     
     public static void insereUsuario(Usuario user) {
 	try {
-	    String query = "insert into usuario values(?,?)";
+	    String query = "insert into usuario values(?,?,?)";
 	    Connection conn = retornaConn();
 	    PreparedStatement ps = conn.prepareStatement(query);
 	    ps.setString(1, user.getLogin());
 	    ps.setString(2, user.getSenha());
+            ps.setString(3, user.getNomeExibicao());
 	    ps.execute();
 	} catch (SQLException e) {
+	    System.out.println("Erro ao inserir um usuário no banco.");
 	    e.printStackTrace();
 	}
     }
@@ -67,6 +72,39 @@ public class UsuarioDAO {
 		}
 	    }
 	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+	return ret;
+    }
+
+
+//Criptografa senha no banco    
+    public static String rehash(String str){
+        try{
+            MessageDigest m=MessageDigest.getInstance("MD5");
+            m.update(str.getBytes(),0,str.length());
+            return new BigInteger(1,m.digest()).toString(16);
+        }catch(NoSuchAlgorithmException e){
+	    e.printStackTrace();
+        }
+        return null;
+    }
+
+    //Nickname
+    public static String nomeExibicaoNome(String str){
+	String ret = "";
+	try {
+	    String query = "select nomeExibicao from Usuario where login = ?";
+	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+	    Connection conn = retornaConn();
+	    PreparedStatement ps = conn.prepareStatement(query);
+	    ps.setString(1, str);
+	    ResultSet rs = ps.executeQuery();
+	    while (rs.next()) {
+		ret = rs.getString("nomeExibicao");
+	    }
+	} catch (SQLException e) {
+	    System.out.println("Erro ao buscar nome no banco.");
 	    e.printStackTrace();
 	}
 	return ret;
