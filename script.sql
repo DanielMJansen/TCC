@@ -10,5 +10,6 @@ create table ranking(
 create table usuario(
     login varchar(100) not null,
     senha varchar(100) not null,
+    nomeExibicao varchar(100) not null,
     primary key(login)
 );

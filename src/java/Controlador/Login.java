@@ -10,26 +10,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-@WebServlet(name = "controlLogin", urlPatterns = {"/controlLogin"})
+@WebServlet(name = "Login", urlPatterns = {"/Login"})
 public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Usuario u = new Usuario();
 	u.setLogin(request.getParameter("login").trim());
-	u.setSenha(UsuarioDAO.rehash(request.getParameter("senha").trim()+"chavemestra"));
+	u.setSenha(UsuarioDAO.rehash(request.getParameter("senha").trim()));
 	request.setCharacterEncoding("UTF-8");
 	String pagina = "";
 	Erro e = new Erro("");
-	e.setLink("login_Usuario.jsp");
+	e.setLink("Login.jsp");
 	if(UsuarioDAO.existeUsuario(u)){ // se o usuário já tá cadastrado
-	    pagina = "inicio_Logado.jsp";
+	    pagina = "InicioLogado.jsp";
 	    HttpSession session = request.getSession(true); // cria a sessão - o 'true' é pra significar que tem que criar
 	    session.setAttribute("loginUsuario", u.getLogin()); // atribui o login num atributo chamado "loginUsuario"
 	    session.setAttribute("nomeExibicao", UsuarioDAO.nomeExibicaoNome(u.getLogin()));
-	    request.setAttribute("usuario", UsuarioDAO.existeLogin(u.getLogin())); // atribui o próprio usuário num atributo chamado "usuario"
+	    request.setAttribute("usuario", UsuarioDAO.carregaUsuarioLogin(u.getLogin())); // atribui o próprio usuário num atributo chamado "usuario"
 	}else{
-	    pagina = "erro.jsp";
+	    pagina = "ErroLogin.jsp";
 	    e.setErro("Login e/ou senha informados incorretamente ou um dos campos está vazio.");
 	    request.setAttribute("erro", e);
 	}

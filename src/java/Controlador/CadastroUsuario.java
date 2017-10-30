@@ -37,13 +37,16 @@ public class CadastroUsuario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Usuario u = new Usuario();
         response.setContentType("text/html;charset=UTF-8");
-        Usuario user = new Usuario(request.getParameter("login"), request.getParameter("senha"));
-        if(UsuarioDAO.existeLogin(user.getLogin()) || user.getLogin().equals("null")){
+	    u.setLogin(request.getParameter("login"));
+	    u.setSenha(UsuarioDAO.rehash(request.getParameter("senha")));
+	    u.setNomeExibicao(request.getParameter("nomeExibicao"));
+        if(UsuarioDAO.existeLogin(u.getLogin()) || u.getLogin().equals("null")){
             RequestDispatcher rd = request.getRequestDispatcher("ErroCadastro.jsp");
             rd.forward(request, response);
         }else{
-            UsuarioDAO.insereUsuario(user);
+            UsuarioDAO.insereUsuario(u);
             RequestDispatcher rd = request.getRequestDispatcher("Inicio.jsp");
             rd.forward(request, response);
         }

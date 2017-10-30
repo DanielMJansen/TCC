@@ -35,7 +35,7 @@
                     <label class="mdl-textfield__label" for="sample1">senha</label>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text" id="senha_user" name="nick">
+                    <input class="mdl-textfield__input" type="text" id="senha_user" name="nomeExibicao">
                     <label class="mdl-textfield__label" for="sample1">nick</label>
                 </div>
                 <button type="submit" class="mdl-button mdl-js-button mdl-button--raised" style="

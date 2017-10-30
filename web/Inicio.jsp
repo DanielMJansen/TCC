@@ -14,16 +14,37 @@
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Lab Game</span>
         <nav class="mdl-navigation">
-        <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
-            <a class="mdl-navigation__link" href="Login.jsp">Login</a>
-            <a class="mdl-navigation__link" href="CadastroUser.jsp">Cadastrar</a>
-            <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
-            <a class="mdl-navigation__link" href="faq.html">FAQ</a>
-        </nav>
+            <nav class="mdl-navigation">
+                <%
+                    if (session.getAttribute("loginUsuario") == null) { %>
+                <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
+                <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
+                <a class="mdl-navigation__link" href="faq.html">FAQ</a>
+                <a class="mdl-navigation__link" href="Deslogar.jsp">Deslogar</a>
+                <%} else {%>
+                <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
+                <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
+                <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
+                <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>
+                <a class="mdl-navigation__link" href="faq.html">FAQ</a>
+                <a class="mdl-navigation__link" href="Deslogar.jsp">Deslogar</a>
+                <%}%>
+            </nav>
     </div>
-    <main class="mdl-layout__content">
-        <div class="page-content">
-                
-        </div>
-    </main>
+    <h5 class="demo-crumbs mdl-color-text--grey-500" style="text-align: center;">
+        Seja bem-vindo!
+    </h5>
+    <h3 style="text-align: center;">Labirinto</h3>
+    <h4 style="text-align: center;">
+        Um jogo composto por 3 fases uma mais divertida do que a outra!
+    </h4>
+    <h4 style="text-align: center; ">
+        Não é cadastrado? <a href="CadastroUser.jsp">Faça seu cadastro!</a>
+    </h4>
+    <h4 style="text-align: center;">
+        Já é cadastrado? <a href="Login.jsp">Faça login!</a>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+
+            </div>
+        </main>

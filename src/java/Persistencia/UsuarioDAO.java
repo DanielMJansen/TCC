@@ -58,6 +58,26 @@ public class UsuarioDAO {
 	return ret;
     }
     
+        public static Usuario carregaUsuarioLogin(String login){
+	Usuario ret = new Usuario();
+	try {
+	    String query = "select * from Usuario where login = ?";
+	    Connection conn = retornaConn();
+	    PreparedStatement ps = conn.prepareStatement(query);
+	    ps.setString(1, login);
+	    ResultSet rs = ps.executeQuery();
+	    while (rs.next()) {
+		ret.setNomeExibicao(rs.getString("nomeExibicao"));
+		ret.setLogin(login);
+		ret.setSenha(rs.getString("senha"));
+	    }
+	} catch (SQLException e) {
+	    System.out.println("Erro ao verificar se existe o usuário no banco.");
+	    e.printStackTrace();
+	}
+	return ret;
+    }
+    
     public static boolean existeLogin(String user) {
 	boolean ret = false;
 	try {
@@ -94,7 +114,7 @@ public class UsuarioDAO {
     public static String nomeExibicaoNome(String str){
 	String ret = "";
 	try {
-	    String query = "select nomeExibicao from Usuario where login = ?";
+	    String query = "select nomeExibicao from usuario where login = ?";
 	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 	    Connection conn = retornaConn();
 	    PreparedStatement ps = conn.prepareStatement(query);
