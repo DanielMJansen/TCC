@@ -12,7 +12,8 @@
     </header>
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Lab Game</span>
-        <nav class="mdl-navigation">
+       <nav class="mdl-navigation">
+            <nav class="mdl-navigation">
                 <%
                     if (session.getAttribute("loginUsuario") == null) { %>
                 <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
@@ -28,7 +29,7 @@
                 <a class="mdl-navigation__link" href="faq.html">FAQ</a>
                 <a class="mdl-navigation__link" href="Deslogar.jsp">Deslogar</a>
                 <%}%>
-        </nav>
+            </nav>
     </div>
     
     <main class="mdl-layout__content">

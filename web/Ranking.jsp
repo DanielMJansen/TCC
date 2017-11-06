@@ -14,19 +14,23 @@
     </header>
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Principal</span>
-        <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
-            <a class="mdl-navigation__link" href="Login.jsp">Login</a>
-            <a class="mdl-navigation__link" href="CadastroUsuario.jsp">Cadastrar</a>
-            <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
-            <% if (Login.logado = true){
-                       <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
-            <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>    
-            }%>
-           <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
-            <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>         
-                    
-        </nav>
+            <nav class="mdl-navigation">
+                <%
+                    if (session.getAttribute("loginUsuario") == null) { %>
+                <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
+                <a class="mdl-navigation__link" href="CadastroUser.jsp">Cadastrar</a>
+                <a class="mdl-navigation__link" href="Login.jsp">Logar</a>
+                <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
+                <a class="mdl-navigation__link" href="faq.html">FAQ</a>
+                <%} else {%>
+                <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
+                <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
+                <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
+                <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>
+                <a class="mdl-navigation__link" href="faq.html">FAQ</a>
+                <a class="mdl-navigation__link" href="Deslogar.jsp">Deslogar</a>
+                <%}%>
+            </nav>
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
