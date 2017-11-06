@@ -36,7 +36,7 @@ public class CadastroPontuacao extends HttpServlet {
         jogador.setTempo((String) request.getParameter("tempo"));
         
         JogadorDAO DAO = new JogadorDAO();
-        try {
+      try {
             DAO.CadastraRanking(jogador.getNick(), jogador.getPontuacao(), jogador.getTempo());
         } catch (SQLException ex) {
             ex.printStackTrace();

@@ -18,9 +18,10 @@
                 <%
                     if (session.getAttribute("loginUsuario") == null) { %>
                 <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
+                <a class="mdl-navigation__link" href="CadastroUser.jsp">Cadastrar</a>
+                <a class="mdl-navigation__link" href="Login.jsp">Logar</a>
                 <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
                 <a class="mdl-navigation__link" href="faq.html">FAQ</a>
-                <a class="mdl-navigation__link" href="Deslogar.jsp">Deslogar</a>
                 <%} else {%>
                 <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
                 <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
