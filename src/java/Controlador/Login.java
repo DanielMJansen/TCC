@@ -26,7 +26,7 @@ public class Login extends HttpServlet {
 	    pagina = "InicioLogado.jsp";
 	    HttpSession session = request.getSession(true); // cria a sessão - o 'true' é pra significar que tem que criar
 	    session.setAttribute("loginUsuario", u.getLogin()); // atribui o login num atributo chamado "loginUsuario"
-	    session.setAttribute("nomeExibicao", UsuarioDAO.nomeExibicaoNome(u.getLogin()));
+	    session.setAttribute("nick", UsuarioDAO.Nick(u.getLogin()));
 	    request.setAttribute("usuario", UsuarioDAO.carregaUsuarioLogin(u.getLogin())); // atribui o próprio usuário num atributo chamado "usuario"
 	}else{
 	    pagina = "ErroLogin.jsp";

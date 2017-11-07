@@ -2,14 +2,14 @@
 public class Usuario {
     private String login;
     private String senha;
-    private String nomeExibicao;
+   public static String nick;
 
-    public String getNomeExibicao() {
-	return nomeExibicao;
+    public String getNick() {
+	return nick;
     }
 
-    public void setNomeExibicao(String nomeExibicao) {
-	this.nomeExibicao = nomeExibicao;
+    public void setNick(String nick) {
+	this.nick = nick;
     }
 
     public Usuario(){

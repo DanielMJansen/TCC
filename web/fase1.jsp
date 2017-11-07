@@ -320,6 +320,7 @@ checkLevel();
 
 function checkLevel(){
 if(player.x >= 586 && player.y >= 3884){
+alert("Parabens, voce passou de nivel!");
 $.get("CadastraPontuacao?nick="+<%=x%>+"&tempo="+secs+"&pontuacao="+pontos);
 alert("Parabens, voce passou de nivel!");
 window.location.replace("labirinto2.html");

@@ -31,7 +31,7 @@ public class UsuarioDAO {
 	    PreparedStatement ps = conn.prepareStatement(query);
 	    ps.setString(1, user.getLogin());
 	    ps.setString(2, user.getSenha());
-            ps.setString(3, user.getNomeExibicao());
+            ps.setString(3, user.getNick());
 	    ps.execute();
 	} catch (SQLException e) {
 	    System.out.println("Erro ao inserir um usuário no banco.");
@@ -67,7 +67,7 @@ public class UsuarioDAO {
 	    ps.setString(1, login);
 	    ResultSet rs = ps.executeQuery();
 	    while (rs.next()) {
-		ret.setNomeExibicao(rs.getString("nomeExibicao"));
+		ret.setNick(rs.getString("nick"));
 		ret.setLogin(login);
 		ret.setSenha(rs.getString("senha"));
 	    }
@@ -111,17 +111,17 @@ public class UsuarioDAO {
     }
 
     //Nickname
-    public static String nomeExibicaoNome(String str){
+    public static String Nick(String str){
 	String ret = "";
 	try {
-	    String query = "select nomeExibicao from usuario where login = ?";
+	    String query = "select nick from usuario where login = ?";
 	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 	    Connection conn = retornaConn();
 	    PreparedStatement ps = conn.prepareStatement(query);
 	    ps.setString(1, str);
 	    ResultSet rs = ps.executeQuery();
 	    while (rs.next()) {
-		ret = rs.getString("nomeExibicao");
+		ret = rs.getString("nick");
 	    }
 	} catch (SQLException e) {
 	    System.out.println("Erro ao buscar nome no banco.");
