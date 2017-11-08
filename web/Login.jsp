@@ -14,12 +14,25 @@
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Lab Game</span>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
-            <a class="mdl-navigation__link" href="Login.jsp">Login</a>
-            <a class="mdl-navigation__link" href="CadastroUser.jsp">Cadastrar</a>
-            <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
-            <a class="mdl-navigation__link" href="faq.html">FAQ</a>
-        </nav>
+            <nav class="mdl-navigation">
+                <%
+                    if (session.getAttribute("loginUsuario") == null) { %>
+                <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
+                <a class="mdl-navigation__link" href="CadastroUser.jsp">Cadastrar</a>
+                <a class="mdl-navigation__link" href="Login.jsp">Logar</a>
+                <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
+                <a class="mdl-navigation__link" href="faq.jsp">FAQ</a>
+                <%} else {%>
+                <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
+                <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
+                <a class="mdl-navigation__link" href="labirinto.jsp">Fase 1</a>
+                <a class="mdl-navigation__link" href="labirinto2.jsp">Fase 2</a>
+                <a class="mdl-navigation__link" href="faq.jsp">FAQ</a>
+                <form action="Deslogar" method="post">
+                    <a class="mdl-navigation__link" href="javascript:;" onclick="parentNode.submit();">Deslogar</a>
+                </form>
+                <%}%>
+            </nav>
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">

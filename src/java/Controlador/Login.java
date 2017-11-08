@@ -23,7 +23,7 @@ public class Login extends HttpServlet {
 	Erro e = new Erro("");
 	e.setLink("Login.jsp");
 	if(UsuarioDAO.existeUsuario(u)){ // se o usuário já tá cadastrado
-	    pagina = "InicioLogado.jsp";
+	    pagina = "Inicio.jsp";
 	    HttpSession session = request.getSession(true); // cria a sessão - o 'true' é pra significar que tem que criar
 	    session.setAttribute("loginUsuario", u.getLogin()); // atribui o login num atributo chamado "loginUsuario"
 	    session.setAttribute("nick", UsuarioDAO.Nick(u.getLogin()));

@@ -18,16 +18,19 @@
                 <%
                     if (session.getAttribute("loginUsuario") == null) { %>
                 <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
+                <a class="mdl-navigation__link" href="CadastroUser.jsp">Cadastrar</a>
+                <a class="mdl-navigation__link" href="Login.jsp">Logar</a>
                 <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
-                <a class="mdl-navigation__link" href="faq.html">FAQ</a>
-                <a class="mdl-navigation__link" href="Deslogar.jsp">Deslogar</a>
+                <a class="mdl-navigation__link" href="faq.jsp">FAQ</a>
                 <%} else {%>
                 <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
                 <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
-                <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
-                <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>
-                <a class="mdl-navigation__link" href="faq.html">FAQ</a>
-                <a class="mdl-navigation__link" href="Deslogar.jsp">Deslogar</a>
+                <a class="mdl-navigation__link" href="labirinto.jsp">Fase 1</a>
+                <a class="mdl-navigation__link" href="labirinto2.jsp">Fase 2</a>
+                <a class="mdl-navigation__link" href="faq.jsp">FAQ</a>
+                <form action="Deslogar" method="post">
+                    <a class="mdl-navigation__link" href="javascript:;" onclick="parentNode.submit();">Deslogar</a>
+                </form>
                 <%}%>
             </nav>
     </div>

@@ -1,3 +1,5 @@
+<%@page import="Persistencia.UsuarioDAO"%>
+<%@page import="Modelo.Usuario"%>
 <%@page import="Persistencia.JogadorDAO"%>
 <%@page import="Modelo.Jogador"%>
 <!-- Always shows a header, even in smaller screens. -->
@@ -21,19 +23,23 @@
                 <a class="mdl-navigation__link" href="CadastroUser.jsp">Cadastrar</a>
                 <a class="mdl-navigation__link" href="Login.jsp">Logar</a>
                 <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
-                <a class="mdl-navigation__link" href="faq.html">FAQ</a>
+                <a class="mdl-navigation__link" href="faq.jsp">FAQ</a>
                 <%} else {%>
                 <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
                 <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
-                <a class="mdl-navigation__link" href="labirinto.html">Fase 1</a>
-                <a class="mdl-navigation__link" href="labirinto2.html">Fase 2</a>
-                <a class="mdl-navigation__link" href="faq.html">FAQ</a>
-                <a class="mdl-navigation__link" href="Deslogar.jsp">Deslogar</a>
+                <a class="mdl-navigation__link" href="labirinto.jsp">Fase 1</a>
+                <a class="mdl-navigation__link" href="labirinto2.jsp">Fase 2</a>
+                <a class="mdl-navigation__link" href="faq.jsp">FAQ</a>
+                <form action="Deslogar" method="post">
+                    <a class="mdl-navigation__link" href="javascript:;" onclick="parentNode.submit();">Deslogar</a>
+                </form>
                 <%}%>
             </nav>
     </div>
     <h5 class="demo-crumbs mdl-color-text--grey-500" style="text-align: center;">
-        Seja bem-vindo!
+        Seja bem-vindo<%
+            Usuario u = new Usuario();
+            out.println(UsuarioDAO.Nick(u.getNick()));%>!!
     </h5>
     <h3 style="text-align: center;">Labirinto</h3>
     <h4 style="text-align: center;">
