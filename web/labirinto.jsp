@@ -45,7 +45,7 @@
         <div class="flutua">Tempo:<br/><span id=tempo class=letragrande>10:00</span></div>
         <div class="flutua">Pontuacao:<br/><span id=pontuacao class=letragrande>3000</span></div>
          <script src="jquery-3.2.1.min.js"></script>
-        <canvas width="150" height="150" align = center style="border: solid;">
+        <canvas width="450" height="450" align = center style="border: solid;">
             <script src="fase2.jsp"></script>
     </body>
 </html>

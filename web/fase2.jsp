@@ -12,7 +12,7 @@ var tileSrcSize = 96;
 var pontos = 3000;
 
 var img = new Image();
-img.src = "fase2.png";
+img.src = "fase1.png";
 img.addEventListener("load",function(){
 requestAnimationFrame(loop,cnv);
 },false);
@@ -39,7 +39,7 @@ x: tileSize + 2,
 y: tileSize + 2,
 width: 24,
 height: 32,
-speed: <% out.println(3.5);%>,
+speed: <% out.println(10.5);%>,
 // %=fase.getSpeed()% depois vai ser algo assim
 //atributos de animação
 srcX: 0,

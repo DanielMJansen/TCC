@@ -315,15 +315,20 @@ checkLevel();
 
 <%
     HttpSession ses = request.getSession(true);
-    String x= (String) ses.getAttribute("nick");
-    %>
+    String x = (String) ses.getAttribute("nick");
+%>
 
 function checkLevel(){
 if(player.x >= 586 && player.y >= 3884){
 alert("Parabens, voce passou de nivel!");
-$.get("CadastraPontuacao?nick="+<%=x%>+"&tempo="+secs+"&pontuacao="+pontos);
-alert("Parabens, voce passou de nivel!");
-window.location.replace("labirinto.jsp");
+  player.x = 585;
+$.get("CadastroPontuacao?nick=joao&tempo=10&pontuacao=20", function(data) {
+  alert("Parabens, voce passou de nivel!");
+  //window.location.replace("labirinto.jsp");
+});
+//$.get("CadastraPontuacao?nick="+<%=x%>+"&tempo="+secs+"&pontuacao="+pontos);
+//window.location.replace("labirinto.jsp");
+
 }
 }
 
