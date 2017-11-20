@@ -284,11 +284,8 @@ var person = prompt("Parabens, voce passou de nivel! Insira seu nome.", "Bob");
 var fase = 3;
 player.x = 585;
 var tempo = $("#tempo").text();
-alert(tempo);
 var pontuacao = $("#pontuacao").text();
-alert(pontuacao);
-alert(person);
-var url = 'SalvaPontuacao?nick='+person+'&tempo='+tempo+'&fase='+fase+'&pontuacao='+pontuacao+;
+var url = 'SalvaPontuacao?nick='+person+'&tempo='+tempo+'&fase='+fase+'&pontuacao='+pontuacao;
 $.get(url, function(data) {
 window.location.replace("labirinto4.jsp");
 });
