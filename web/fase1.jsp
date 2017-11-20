@@ -321,22 +321,15 @@ checkLevel();
 
 function checkLevel(){
 if(player.x >= 586 && player.y >= 1000) {//3884){
+var person = prompt("Parabens, voce passou de nivel! Insira seu nome.", "Bob");
 alert("Parabens, voce passou de nivel!");
 player.x = 585;
 var tempo = $("#segundos").text();
 var pontuacao = $("#pontuacao").text();
-//var nome = <%=x%>;
-//alert("nome: "+nome);
-//alert(tempo+"-"+pontuacao);
-var url = 'CadastroPontuacao?nick=joao&tempo='+tempo+'&pontuacao='+pontuacao;
+var url = 'SalvaPontuacao?nick='+person+'&tempo='+tempo+'&pontuacao='+pontuacao;
 $.get(url, function(data) {
-alert("Parabens, voce passou de nivel!");
-player.x = 585;
-//  window.location.replace("labirinto.jsp");
+window.location.replace("labirinto.jsp");
 });
-//$.get("CadastraPontuacao?nick="+<%=x%>+"&tempo="+secs+"&pontuacao="+pontos");
-//window.location.replace("labirinto.jsp");
-
 }
 }
 
