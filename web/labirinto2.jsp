@@ -48,6 +48,6 @@
         <span id=segundos></span>
         <script src="jquery-3.2.1.min.js"></script>
         <canvas width="150" height="150" align = center style="border: solid;">
-            <script src="fase1.jsp"></script>
+            <script src="fase2.jsp"></script>
     </body>
 </html>

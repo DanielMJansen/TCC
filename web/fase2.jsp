@@ -273,9 +273,16 @@ checkLevel();
 }
 
 function checkLevel(){
-if(player.x == 1276 && player.y == 1184){
+if(player.x >= 586 && player.y >= 1000) {//3884){
+var person = prompt("Parabens, voce passou de nivel! Insira seu nome.", "Bob");
 alert("Parabens, voce passou de nivel!");
-window.location.replace("http://localhost:8383/Lab/labirinto2.html");
+player.x = 585;
+var tempo = $("#segundos").text();
+var pontuacao = $("#pontuacao").text();
+var url = 'Ranking?nick='+person+'&tempo='+tempo+'&pontuacao='+pontuacao;
+$.get(url, function(data) {
+window.location.replace("Inicio.jsp");
+});
 }
 }
 

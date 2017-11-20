@@ -326,7 +326,7 @@ alert("Parabens, voce passou de nivel!");
 player.x = 585;
 var tempo = $("#segundos").text();
 var pontuacao = $("#pontuacao").text();
-var url = 'SalvaPontuacao?nick='+person+'&tempo='+tempo+'&pontuacao='+pontuacao;
+var url = 'Ranking?nick='+person+'&tempo='+tempo+'&pontuacao='+pontuacao;
 $.get(url, function(data) {
 window.location.replace("labirinto.jsp");
 });

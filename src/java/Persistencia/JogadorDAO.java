@@ -14,7 +14,7 @@ public class JogadorDAO {
         public ArrayList<Jogador> CarregaJogador() throws SQLException {
         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Principal", "root", "alunoifc");
-        String query = "select nick, pontuacao, tempo from ranking";
+        String query = "select nick, pontuacao, tempo from ranking order by pontuacao desc";
         PreparedStatement ps = conn.prepareStatement(query);
         ResultSet rs = ps.executeQuery();
         ArrayList<Jogador> jogadores = new ArrayList();
