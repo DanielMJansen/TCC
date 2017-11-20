@@ -20,11 +20,10 @@ window.onload = function() {
 var secs = 600;
 var id = setInterval(function(){ 
 secs--; console.log(secs);
-var minuto = Math.floor(secs/60);
-var segundo = secs-minuto*60;
 pontos= pontos-5;
 $("#pontuacao").text(+pontos);
-$("#tempo").text(minuto+":"+segundo);
+$("#segundos").text(+secs);
+$("#tempo").text(secs);
 if(secs<= 0){
 clearInterval(id);
 alert('Total Time: ' + secs + ' seconds');
@@ -282,10 +281,14 @@ checkLevel();
 function checkLevel(){
 if(player.x >= 586 && player.y >= 1000) {//3884){
 var person = prompt("Parabens, voce passou de nivel! Insira seu nome.", "Bob");
+var fase = 3;
 player.x = 585;
-var tempo = $("#segundos").text();
+var tempo = $("#tempo").text();
+alert(tempo);
 var pontuacao = $("#pontuacao").text();
-var url = 'Ranking?nick='+person+'&tempo='+tempo+'&pontuacao='+pontuacao;
+alert(pontuacao);
+alert(person);
+var url = 'SalvaPontuacao?nick='+person+'&tempo='+tempo+'&fase='+fase+'&pontuacao='+pontuacao+;
 $.get(url, function(data) {
 window.location.replace("labirinto4.jsp");
 });

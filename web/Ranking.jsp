@@ -46,6 +46,7 @@
                         <th class="mdl-data-table__cell--non-numeric">Nick</th>
                         <th>Pontuação</th>
                         <th>Tempo</th>
+                        <th>Fase</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,6 +55,7 @@
                 <td class="mdl-data-table__cell--non-numeric"><%=jogador.getNick()%></td>
                 <td><%=jogador.getPontuacao()%></td>
                 <td><%=jogador.getTempo()%></td>
+                <td><%=jogador.getFase()%></td>
             </tr>
             <%}%>
             </tbody>

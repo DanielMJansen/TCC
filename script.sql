@@ -4,7 +4,8 @@ use Principal;
 create table ranking(
     nick varchar(100) not null,
     pontuacao float not null,
-    tempo float not null
+    tempo float not null,
+    fase varchar(100) not null
 );
 
 create table usuario(
@@ -13,3 +14,5 @@ create table usuario(
     nick varchar(100) not null,
     primary key(login)
 );
+
+select * from ranking;

@@ -14,6 +14,15 @@ public class Jogador {
     private String nick;
     private String pontuacao;
     private String tempo;
+    private String fase;
+
+    public String getFase() {
+        return fase;
+    }
+
+    public void setFase(String fase) {
+        this.fase = fase;
+    }
 
     public String getNick() {
         return nick;

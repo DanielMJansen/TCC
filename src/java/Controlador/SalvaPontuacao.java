@@ -41,10 +41,11 @@ public class SalvaPontuacao extends HttpServlet {
             jogador.setNick((String) request.getParameter("nick"));
             jogador.setPontuacao((String) request.getParameter("pontuacao"));
             jogador.setTempo((String) request.getParameter("tempo"));
+            jogador.setFase((String) request.getParameter("fase"));
 
             JogadorDAO DAO = new JogadorDAO();
             try {
-                DAO.CadastraRanking(jogador.getNick(), jogador.getPontuacao(), jogador.getTempo());
+                DAO.CadastraRanking(jogador.getNick(), jogador.getPontuacao(), jogador.getTempo(), jogador.getFase());
             } catch (SQLException ex) {
                 ex.printStackTrace();
 
