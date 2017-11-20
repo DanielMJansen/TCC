@@ -25,6 +25,9 @@
                 <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
                 <a class="mdl-navigation__link" href="labirinto.jsp">Fase 1</a>
                 <a class="mdl-navigation__link" href="labirinto2.jsp">Fase 2</a>
+                <a class="mdl-navigation__link" href="labirinto3.jsp">Fase 3</a>
+                <a class="mdl-navigation__link" href="labirinto4.jsp">Fase 4</a>
+                <a class="mdl-navigation__link" href="labirinto5.jsp">Fase 5</a>
                 <a class="mdl-navigation__link" href="faq.jsp">FAQ</a>
                 <form action="Deslogar" method="post">
                     <a class="mdl-navigation__link" href="javascript:;" onclick="parentNode.submit();">Deslogar</a>

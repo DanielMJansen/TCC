@@ -1,6 +1,3 @@
-<%@page import="Persistencia.JogadorDAO"%>
-<%@page import="Modelo.Jogador"%>
-<!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -12,7 +9,7 @@
         </div>
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Lab Game</span>
+        <span class="mdl-layout-title">Principal</span>
         <nav class="mdl-navigation">
             <nav class="mdl-navigation">
                 <%
@@ -37,8 +34,21 @@
                 <%}%>
             </nav>
     </div>
-    <main class="mdl-layout__content">
-        <div class="page-content">
-
-        </div>
-    </main>
+        <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta name="generator" content="Geany 1.27" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Fase 1</title>
+        <link rel="stylesheet" type="text/css" href="labirinto2.css" />
+    </head>
+    <header>
+    <body>
+        <div id="posicao" >eeee</div>
+        <div id="posicaoy" >eee</div>
+        <div class="flutua">Tempo:<br/><span id=tempo class=letragrande>10:00</span></div>
+        <div class="flutua">Pontuacao:<br/><span id=pontuacao class=letragrande>3000</span></div>
+         <script src="jquery-3.2.1.min.js"></script>
+        <canvas width="150" height="150" align = center style="border: solid;">
+            <script src="fase3.jsp"></script>
+    </body>
+</html>

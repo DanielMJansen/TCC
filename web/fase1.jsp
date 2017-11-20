@@ -313,22 +313,15 @@ requestAnimationFrame(loop,cnv);
 checkLevel();
 
 }
-
-<%
-    HttpSession ses = request.getSession(true);
-    String x = (String) ses.getAttribute("nick");
-%>
-
 function checkLevel(){
 if(player.x >= 586 && player.y >= 1000) {//3884){
 var person = prompt("Parabens, voce passou de nivel! Insira seu nome.", "Bob");
-alert("Parabens, voce passou de nivel!");
 player.x = 585;
 var tempo = $("#segundos").text();
 var pontuacao = $("#pontuacao").text();
-var url = 'Ranking?nick='+person+'&tempo='+tempo+'&pontuacao='+pontuacao;
+var url = 'SalvaPontuacao?nick=person&tempo='+tempo+'&pontuacao='+pontuacao;
 $.get(url, function(data) {
-window.location.replace("labirinto.jsp");
+window.location.replace("labirinto2.jsp");
 });
 }
 }

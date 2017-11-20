@@ -16,7 +16,7 @@ public class UsuarioDAO {
         Connection conn = null;
         try{
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Principal", "root", "alunoifc");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Principal", "root", "1234");
         }catch(SQLException e){
             System.out.println("SQL erro.");
             e.printStackTrace();

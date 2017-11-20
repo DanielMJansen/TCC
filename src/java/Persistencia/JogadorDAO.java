@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class JogadorDAO {
         public ArrayList<Jogador> CarregaJogador() throws SQLException {
         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Principal", "root", "alunoifc");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Principal", "root", "1234");
         String query = "select nick, pontuacao, tempo from ranking order by pontuacao desc";
         PreparedStatement ps = conn.prepareStatement(query);
         ResultSet rs = ps.executeQuery();
@@ -31,7 +31,7 @@ public class JogadorDAO {
         
         public void CadastraRanking(String nick, String pontuacao, String tempo) throws SQLException {
         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Principal", "root", "alunoifc");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Principal", "root", "1234");
         String query = "insert into ranking(nick, pontuacao, tempo) values(?,?,?);";
         PreparedStatement ps = conn.prepareStatement(query);
         ps.setString(1, nick);
