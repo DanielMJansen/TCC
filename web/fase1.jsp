@@ -218,8 +218,6 @@ break;
 }
 
 function update(){
-$("#posicao").text(player.x);
-$("#posicaoy").text(player.y);
 if(mvLeft && !mvRight){
 player.x -= player.speed;
 //ajuste de orientaÃ§Ã£o da animaÃ§Ã£o para esquerda

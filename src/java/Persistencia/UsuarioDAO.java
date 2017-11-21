@@ -61,7 +61,7 @@ public class UsuarioDAO {
         public static Usuario carregaUsuarioLogin(String login){
 	Usuario ret = new Usuario();
 	try {
-	    String query = "select * from Usuario where login = ?";
+	    String query = "select * from usuario where login = ?";
 	    Connection conn = retornaConn();
 	    PreparedStatement ps = conn.prepareStatement(query);
 	    ps.setString(1, login);
@@ -77,6 +77,7 @@ public class UsuarioDAO {
 	}
 	return ret;
     }
+        
     
     public static boolean existeLogin(String user) {
 	boolean ret = false;
@@ -96,19 +97,9 @@ public class UsuarioDAO {
 	}
 	return ret;
     }
+    
 
 
-//Criptografa senha no banco    
-    public static String rehash(String str){
-        try{
-            MessageDigest m=MessageDigest.getInstance("MD5");
-            m.update(str.getBytes(),0,str.length());
-            return new BigInteger(1,m.digest()).toString(16);
-        }catch(NoSuchAlgorithmException e){
-	    e.printStackTrace();
-        }
-        return null;
-    }
 
     //Nickname
     public static String Nick(String str){

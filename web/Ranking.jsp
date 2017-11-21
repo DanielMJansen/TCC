@@ -1,3 +1,5 @@
+<%@page import="Persistencia.UsuarioDAO"%>
+<%@page import="Modelo.Usuario"%>
 <%@page import="Controlador.Login"%>
 <%@page import="Persistencia.JogadorDAO"%>
 <%@page import="Modelo.Jogador"%>
@@ -43,23 +45,34 @@
             <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                 <thead>
                     <tr>
-                        <th class="mdl-data-table__cell--non-numeric">Nick</th>
-                        <th>Pontuação</th>
-                        <th>Tempo</th>
-                        <th>Fase</th>
-                    </tr>
+
+
+                        <%
+                            if (session.getAttribute("adminlogado") != null) {
+                        %>
+                <form action="DeletaRanking" method ="ProcessRequest">
+                    <input type="submit" value = "Deletar Ranking">
+                </form>
+                
+                <%}%>
+
+                <th class="mdl-data-table__cell--non-numeric">Nick</th>
+                <th>Pontuação</th>
+                <th>Tempo</th>
+                <th>Fase</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <%for(Jogador jogador : new JogadorDAO().CarregaJogador()){%>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric"><%=jogador.getNick()%></td>
-                <td><%=jogador.getPontuacao()%></td>
-                <td><%=jogador.getTempo()%></td>
-                <td><%=jogador.getFase()%></td>
-            </tr>
-            <%}%>
-            </tbody>
+                    <%for (Jogador jogador : new JogadorDAO().CarregaJogador()) {%>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric"><%=jogador.getNick()%></td>
+                        <td><%=jogador.getPontuacao()%></td>
+                        <td><%=jogador.getTempo()%></td>
+                        <td><%=jogador.getFase()%></td>
+                    </tr>
+                    <%}%>
+                </tbody>
             </table>
-    </div>
-</main>
+        </div>
+    </main>
 </div>

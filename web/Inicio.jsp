@@ -40,7 +40,7 @@
             </nav>
     </div>
     <h5 class="demo-crumbs mdl-color-text--grey-500" style="text-align: center;">
-        Seja bem-vindo<%
+        Seja bem-vindo <%
             if (session.getAttribute("loginUsuario") != null) {
                 Usuario u = new Usuario();
                 out.println(UsuarioDAO.Nick(u.getNick()));

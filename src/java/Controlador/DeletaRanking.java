@@ -6,7 +6,9 @@
 package Controlador;
 
 import Modelo.Jogador;
+import Modelo.Usuario;
 import Persistencia.JogadorDAO;
+import Persistencia.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -19,10 +21,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author friend
+ * @author danie
  */
-@WebServlet(name = "Funciona", urlPatterns = {"/Funciona"})
-public class Funciona extends HttpServlet {
+@WebServlet(name = "DeletaRanking", urlPatterns = {"/DeletaRanking"})
+public class DeletaRanking extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,14 +39,9 @@ public class Funciona extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            Jogador jogador = new Jogador();
-            jogador.setNick((String) request.getParameter("nick"));
-            jogador.setPontuacao((String) request.getParameter("pontuacao"));
-            jogador.setTempo((String) request.getParameter("tempo"));
-
             JogadorDAO DAO = new JogadorDAO();
             try {
-                DAO.CadastraRanking(jogador.getNick(), jogador.getPontuacao(), jogador.getTempo(), jogador.getFase());
+                DAO.DeletaRanking();
             } catch (SQLException ex) {
                 ex.printStackTrace();
 

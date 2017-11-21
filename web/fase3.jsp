@@ -185,7 +185,6 @@ break;
 }
 
 function update(){
-$("#posicao").text(player.x);
 if(mvLeft && !mvRight){
 player.x -= player.speed;
 //ajuste de orientação da animação para esquerda
@@ -279,7 +278,7 @@ checkLevel();
 }
 
 function checkLevel(){
-if(player.x >= 586 && player.y >= 1000) {//3884){
+if(player.x >= 1152 && player.y >= 1906) {
 var person = prompt("Parabens, voce passou de nivel! Insira seu nome.", "Bob");
 var fase = 3;
 player.x = 585;

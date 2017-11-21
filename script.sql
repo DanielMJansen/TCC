@@ -15,4 +15,5 @@ create table usuario(
     primary key(login)
 );
 
-select * from ranking;
+insert into usuario (nick, senha, login) values 
+("admin","admin","admin");

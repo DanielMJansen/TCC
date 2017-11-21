@@ -38,7 +38,7 @@
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <meta name="generator" content="Geany 1.27" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Fase 1</title>
+        <title>Fase 4</title>
         <link rel="stylesheet" type="text/css" href="labirinto2.css" />
     </head>
     <header>

@@ -69,7 +69,7 @@ var maze = [
 [1,0,0,1,0,0,1,1,1,1,1,0,1,0,1,1,1,1,0,1],
 [1,0,0,1,0,0,1,0,0,1,0,0,1,0,1,1,1,1,0,1],
 [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1],
-[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1]
 ];
 
 
@@ -178,7 +178,6 @@ break;
 }
 
 function update(){
-$("#posicao").text(player.x);
 if(mvLeft && !mvRight){
 player.x -= player.speed;
 //ajuste de orientação da animação para esquerda
@@ -272,7 +271,7 @@ checkLevel();
 }
 
 function checkLevel(){
-if(player.x >= 586 && player.y >= 1000) {//3884){
+if(player.x >= 1152 && player.y >= 1458){
 var person = prompt("Parabens, voce passou de nivel! Insira seu nome.", "Bob");
 var fase = 2;
 player.x = 585;

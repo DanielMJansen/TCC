@@ -41,6 +41,13 @@ public class JogadorDAO {
         ps.setString(4, fase);
         ps.execute(); 
     }
+        public void DeletaRanking() throws SQLException{
+       DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Principal", "root", "1234");
+        String query = "truncate ranking";
+        PreparedStatement ps = conn.prepareStatement(query);
+        ps.execute();             
+        }
         
         
 }

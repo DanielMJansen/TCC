@@ -39,7 +39,7 @@
                 <%}%>
             </nav>
     </div>
-            <meta http-equiv="refresh" content="8;URL=CadastroUser.jsp">
+            <meta http-equiv="refresh" content="8;URL=Login.jsp">
     <h5 class="demo-crumbs mdl-color-text--grey-500" style="text-align: center;">
         <br>
         <br>

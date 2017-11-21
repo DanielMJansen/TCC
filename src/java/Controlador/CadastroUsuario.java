@@ -40,7 +40,7 @@ public class CadastroUsuario extends HttpServlet {
         Usuario u = new Usuario();
         response.setContentType("text/html;charset=UTF-8");
 	    u.setLogin(request.getParameter("login"));
-	    u.setSenha(UsuarioDAO.rehash(request.getParameter("senha")));
+	    u.setSenha(request.getParameter("senha"));
 	    u.setNick(request.getParameter("nick"));
         if(UsuarioDAO.existeLogin(u.getLogin()) || u.getLogin().equals("null")){
             RequestDispatcher rd = request.getRequestDispatcher("ErroCadastro.jsp");
