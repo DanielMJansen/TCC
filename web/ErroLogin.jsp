@@ -49,7 +49,7 @@
         <br>
         <br>
         <br>
-        Login ou usuário incorreto. Redirecionando para a pagina de Login.
+        Login ou senha incorreto. Redirecionando para a pagina de Login.
     </h5>
     <h3 style="text-align: center;">Labirinto</h3>
     <h4 style="text-align: center;">

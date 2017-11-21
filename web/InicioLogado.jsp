@@ -23,7 +23,6 @@
                 <a class="mdl-navigation__link" href="CadastroUser.jsp">Cadastrar</a>
                 <a class="mdl-navigation__link" href="Login.jsp">Logar</a>
                 <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
-                <a class="mdl-navigation__link" href="faq.jsp">FAQ</a>
                 <%} else {%>
                 <a class="mdl-navigation__link" href="Inicio.jsp">Inicio</a>
                 <a class="mdl-navigation__link" href="Ranking.jsp">Ranking</a>
@@ -32,7 +31,6 @@
                 <a class="mdl-navigation__link" href="labirinto3.jsp">Fase 3</a>
                 <a class="mdl-navigation__link" href="labirinto4.jsp">Fase 4</a>
                 <a class="mdl-navigation__link" href="labirinto5.jsp">Fase 5</a>
-                <a class="mdl-navigation__link" href="faq.jsp">FAQ</a>
                 <form action="Deslogar" method="post">
                     <a class="mdl-navigation__link" href="javascript:;" onclick="parentNode.submit();">Deslogar</a>
                 </form>
@@ -49,12 +47,15 @@
         Um jogo composto por 3 fases uma mais divertida do que a outra!
     </h4>
     <h4 style="text-align: center; ">
+        <%
+    if (session.getAttribute("loginUsuario") == null) { %>
         Não é cadastrado? <a href="CadastroUser.jsp">Faça seu cadastro!</a>
     </h4>
     <h4 style="text-align: center;">
         Já é cadastrado? <a href="Login.jsp">Faça login!</a>
         <main class="mdl-layout__content">
             <div class="page-content">
+                <%}%>
 
             </div>
         </main>

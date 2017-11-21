@@ -22,7 +22,6 @@ var id = setInterval(function(){
 secs--; console.log(secs);
 pontos= pontos-5;
 $("#pontuacao").text(+pontos);
-$("#segundos").text(+secs);
 $("#tempo").text(secs);
 if(secs<= 0){
 clearInterval(id);
@@ -289,7 +288,7 @@ checkLevel();
 
 function checkLevel(){
 if(player.x >= 192 && player.x <= 232 && player.y >= 2547){
-var person = prompt("Parabens, voce passou de nivel! Insira seu nome.", "Bob");
+var person = prompt("Parabens, voce passou de nivel! Insira seu nome.(Até 100 caracteres)", "Bob");
 var fase = 4;
 player.x = 585;
 var tempo = $("#tempo").text();
