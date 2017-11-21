@@ -53,7 +53,7 @@
     </h5>
     <h3 style="text-align: center;">Labirinto</h3>
     <h4 style="text-align: center;">
-        Um jogo composto por 3 fases uma mais divertida do que a outra!
+        Um jogo composto por 5 fases uma mais divertida do que a outra!
     </h4>
         <main class="mdl-layout__content">
             <div class="page-content">
